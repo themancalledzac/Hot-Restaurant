@@ -23,4 +23,10 @@ app.get('/tables', function (req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
  
+// reservations get
+app.get('/reserve', function (req, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
+});
+ 
+
 app.listen( PORT )
