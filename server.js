@@ -27,6 +27,13 @@ app.get('/tables', function (req, res) {
 app.get('/reserve', function (req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
+
+// Routes - Data
+app.get("/api/character", function(req, res) {
+    var chosen = req.params.character;
+    res.end(chosen); // TODO (?) added chosen. --------------------------------------------------//
+});
  
 
-app.listen( PORT )
+// Listener
+app.listen( PORT );
