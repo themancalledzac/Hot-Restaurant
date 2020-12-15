@@ -10,6 +10,16 @@ var PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// API Table List
+var tables = [
+    {
+        customerName: "admin",
+        customerEmail: "admin@admin.com",
+        customerID: "admin",
+        phoneNumber: "555-555-5555"
+    }
+];
+
 // Routes
 // ===========================================
 
@@ -28,10 +38,11 @@ app.get('/reserve', function (req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-// Routes - Data
-app.get("/api/character", function(req, res) {
-    var chosen = req.params.character;
-    res.end(chosen); // TODO (?) added chosen. --------------------------------------------------//
+// Routes - Data - returns a json object of all characters (for now)
+app.get("/api/tables", function(req, res) {
+    return res.json(tables);
+    // var chosen = req.params.character;
+    // res.end(chosen); // TODO (?) added chosen. --------------------------------------------------//
 });
  
 
